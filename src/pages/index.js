@@ -2,9 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
+import SignUpForm from "../components/SignUpForm"
 import SEO from "../components/seo"
 import GlobalStyles from "../components/GlobalStyles";
+import { H1, P } from "../components/Typography";
 import logo from "../images/projectlink-logo.png"
+import screenshot from "../images/plss.png"
 
 const DotGridBackground = styled.div`
   display: flex;
@@ -24,6 +27,7 @@ const Half = styled.div`
 `
 
 const Left = styled(Half)`
+  max-width: 40rem;
   @media only screen and (min-width: 768px) {
     padding-left: 4rem;
   }
@@ -33,14 +37,24 @@ const Left = styled(Half)`
 `
 
 const Right = styled(Half)`
+  display: none;
   margin: auto;
   @media only screen and (min-width: 768px) {
+    display: block;
     margin-left: 0;
   }
 `
 
 const StyledLogo = styled.img`
-  max-width: 250px;
+  max-width: 232px;
+`
+
+const StyledScreenshot = styled.img`
+  max-width: 520px;
+`
+
+const StyledH1 = styled(H1)`
+  margin: 5rem 0 5rem 0;
 `
 
 const IndexPage = () => (
@@ -50,19 +64,16 @@ const IndexPage = () => (
     <DotGridBackground>
       <Left>
         <StyledLogo src={logo} alt="projectlink logo" />
-        <h1>
+        <StyledH1>
           The best way to close deals
-        </h1>
-        <p>
+        </StyledH1>
+        <P>
           Projectlink is the next generation of enterprise software for buyers and sellers of industrial equipment.
-        </p>
-        {/* <SignUpForm /> */}
+        </P>
+        <SignUpForm />
       </Left>
       <Right>
-        <h1>
-          Right column
-        </h1>
-        {/* <Screenshots /> */}
+        <StyledScreenshot src={screenshot} alt="projectlink screenshot" />
       </Right>
     </DotGridBackground>
   </Layout>

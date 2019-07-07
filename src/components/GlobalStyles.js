@@ -5,10 +5,10 @@ import regular_woff from "../fonts/GT-Walsheim-Regular.woff"
 import regular_oft from "../fonts/GT-Walsheim-Regular.otf"
 import regular_ttf from "../fonts/GT-Walsheim-Regular.ttf"
 
-import medium_woff2 from "../fonts/GT-Walsheim-Medium.woff2"
-import medium_woff from "../fonts/GT-Walsheim-Medium.woff"
-import medium_oft from "../fonts/GT-Walsheim-Medium.otf"
-import medium_ttf from "../fonts/GT-Walsheim-Medium.ttf"
+// import medium_woff2 from "../fonts/GT-Walsheim-Medium.woff2"
+// import medium_woff from "../fonts/GT-Walsheim-Medium.woff"
+// import medium_oft from "../fonts/GT-Walsheim-Medium.otf"
+// import medium_ttf from "../fonts/GT-Walsheim-Medium.ttf"
 
 const GlobalStyles = createGlobalStyle`
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -52,12 +52,13 @@ const GlobalStyles = createGlobalStyle`
   /**
    * Correct the font size and margin on h1 elements within section and
    * article contexts in Chrome, Firefox, and Safari.
+   * 
+   * h1 {
+   * font-size: 3em;
+   * margin: 0.67em 0;
+   * }
    */
 
-  h1 {
-    font-size: 3em;
-    margin: 0.67em 0;
-  }
 
   /* Grouping content
     ========================================================================== */
@@ -371,24 +372,19 @@ const GlobalStyles = createGlobalStyle`
          url(${regular_woff}) format("woff");
          url(${regular_oft}) format("otf");
          url(${regular_ttf}) format("ttf");
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: "GT Walsheim";
-    src: url(${medium_woff2}) format("woff2"),
-         url(${medium_woff}) format("woff");
-         url(${medium_oft}) format("otf");
-         url(${medium_ttf}) format("ttf");
-    font-weight: 600;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: "GT Walsheim", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
-  p {
-    line-height: 1.4;
-    color: #8c8c8c;
-  }
 `;
+  // @font-face {
+  //   font-family: "GT Walsheim";
+  //   src: url(${medium_woff2}) format("woff2"),
+  //        url(${medium_woff}) format("woff");
+  //        url(${medium_oft}) format("otf");
+  //        url(${medium_ttf}) format("ttf");
+  //   font-weight: bold;
+  // }
 
 export default GlobalStyles
