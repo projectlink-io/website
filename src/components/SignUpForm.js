@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import addToMailchimp from "gatsby-plugin-mailchimp";
 
@@ -36,20 +36,31 @@ const Submit = styled.input`
   }
 `
 
-async function handleSubmit(e) {
-  e.preventDefault();
-  console.log(e.target[0].value);
-  try {
-    await addToMailchimp(e.target[0].value);
-    
-  } catch (error) {
-    console.warn(error);
-  }
-}
+const SignUpForm = ({ setNotification }) => {
+  const [email, setEmail] = useState("");
 
-const SignUpForm = () => <form onSubmit={handleSubmit}>
-    <Input type="email" placeholder="Enter your email address" required /><br/>
-    <Submit type="submit" value="Sign up for the beta →" />
-  </form>
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      await addToMailchimp(email);
+      setNotification(true);
+      setEmail("");
+    } catch (error) {
+      console.warn(error);
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input
+        type="text"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="Enter your email address"
+        required /><br/>
+      <Submit type="submit" value="Sign up for the beta →" />
+    </form>
+  );
+}
 
 export default SignUpForm;

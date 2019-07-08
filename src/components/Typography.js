@@ -9,7 +9,6 @@ const H1 = styled.h1`
 const P = styled.p`
   line-height: 1.4;
   color: #8c8c8c;
-  max-width: 22rem;
 `;
 
 const A = styled.a`

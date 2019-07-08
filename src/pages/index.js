@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { Transition } from "react-transition-group"
 
 import Layout from "../components/layout"
 import SignUpForm from "../components/SignUpForm"
 import SEO from "../components/seo"
 import GlobalStyles from "../components/GlobalStyles";
 import { H1, P } from "../components/Typography";
+import StyledNotification from "../components/Notification";
+
 import logo from "../images/projectlink-logo.png"
 import screenshot from "../images/plss.png"
 
@@ -57,26 +60,42 @@ const StyledH1 = styled(H1)`
   margin: 5rem 0 5rem 0;
 `
 
-const IndexPage = () => (
-  <Layout>
-    <GlobalStyles />
-    <SEO title="Home" />
-    <DotGridBackground>
-      <Left>
-        <StyledLogo src={logo} alt="projectlink logo" />
-        <StyledH1>
-          The best way to close deals
-        </StyledH1>
-        <P>
-          Projectlink is the next generation of enterprise software for buyers and sellers of industrial equipment.
-        </P>
-        <SignUpForm />
-      </Left>
-      <Right>
-        <StyledScreenshot src={screenshot} alt="projectlink screenshot" />
-      </Right>
-    </DotGridBackground>
-  </Layout>
-)
+const StyledP = styled(P)`
+  max-width: 22rem;
+`
+
+const IndexPage = () => {
+  const [isOpen, setNotification] = useState(false);
+
+  console.log(isOpen);
+  return (
+    <Layout>
+      <Transition
+        in={isOpen}
+        timeout={500} >
+        {
+          state => <StyledNotification state={state} />
+        }
+      </Transition>
+      <GlobalStyles />
+      <SEO title="Home" />
+      <DotGridBackground>
+        <Left>
+          <StyledLogo src={logo} alt="projectlink logo" />
+          <StyledH1>
+            The best way to close deals
+          </StyledH1>
+          <StyledP>
+            Projectlink is the next generation of enterprise software for buyers and sellers of industrial equipment.
+          </StyledP>
+          <SignUpForm setNotification={setNotification} />
+        </Left>
+        <Right>
+          <StyledScreenshot src={screenshot} alt="projectlink screenshot" />
+        </Right>
+      </DotGridBackground>
+    </Layout>
+  )
+}
 
 export default IndexPage
