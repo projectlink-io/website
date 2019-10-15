@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Projectlink`,
+    description: `Projectlink is a global network for industry leaders`,
+    author: `projectlink`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,6 +27,12 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint: `https://gmail.us3.list-manage.com/subscribe/post?u=917122ec5826ff0e3c02b8bb8&amp;id=3aec3a80e9`
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
