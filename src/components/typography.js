@@ -37,3 +37,12 @@ export const H3 = ({ children, ...rest}) =>
   }} {...rest}>
     {children}
   </h3>
+
+export const H2 = ({ children, ...rest}) =>
+  <h3 sx={{
+    fontSize: 5,
+    lineHeight: "heading",
+    fontWeight: "bold",
+  }} {...rest}>
+    {children}
+  </h3>
