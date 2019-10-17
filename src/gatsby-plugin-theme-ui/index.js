@@ -7,14 +7,14 @@ export default {
       highContrast: "#000",
       lowContrast: "#777",
       negative: {
-        primary: "#b9b9b9",
+        primary: "#fff",
         highContrast: "#fff",
         lowContrast: "#777",
       },
     },
     highlight: "#0066FF",
     background: {
-      beige: "#FAFCFD",
+      beige: "#f5f5f5",
     },
     primary: "#639",
     secondary: "#ff6347",

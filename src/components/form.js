@@ -6,7 +6,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp";
 const Input = ({ children, ...rest }) =>
   <input sx={{
     padding: 2,
-    borderRadius: 3,
+    borderRadius: 5,
     appearance: "none",
     border: "1px solid #d6d6d6",
     width: ["100%", "66.6%"],

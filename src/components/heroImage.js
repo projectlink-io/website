@@ -13,7 +13,7 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Hero = () => {
+const HeroImage = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "projectlink-company.png" }) {
@@ -32,4 +32,4 @@ const Hero = () => {
   }} fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
-export default Hero
+export default HeroImage

@@ -29,9 +29,18 @@ export const P = ({ children, ...rest }) =>
     {children}
   </p>
 
+export const Lead = ({ children, ...rest }) =>
+  <p sx={{
+    fontSize: [3, 4],
+    lineHeight: "heading",
+    fontWeight: "bold",
+  }} {...rest}>
+    {children}
+  </p>
+
 export const H3 = ({ children, ...rest}) =>
   <h3 sx={{
-    fontSize: 4,
+    fontSize: [4, 5],
     lineHeight: "heading",
     fontWeight: "bold",
   }} {...rest}>
@@ -40,7 +49,7 @@ export const H3 = ({ children, ...rest}) =>
 
 export const H2 = ({ children, ...rest}) =>
   <h3 sx={{
-    fontSize: 5,
+    fontSize: [5, 6],
     lineHeight: "heading",
     fontWeight: "bold",
   }} {...rest}>
