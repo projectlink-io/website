@@ -18,7 +18,7 @@ const Projects = () => {
     <CSSTransition in={scrolledTo.some(i => i === "#project01")} classNames="project" timeout={1000}>
       <div className="hide">
         <ProjectImage01 id="project01" sx={{
-            marginTop: "-128px",
+            marginTop: "-64px",
             marginBottom: "16px",
             borderRadius: "7px",
             boxShadow: "0 1px 2px rgba(60,64,67, 0.3), 0 1px 3px 1px rgba(60,64,67, 0.15)",

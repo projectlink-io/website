@@ -12,6 +12,7 @@ import { Global, css } from "@emotion/core"
 
 import Header from "./header"
 import globalcss from "../fonts/global.css"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,11 +28,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Global styles={css`@import url("${globalcss}");`} />
-
       <main>{children}</main>
-      <footer>
-        © footer
-      </footer>
+      <Footer />
     </>
   )
 }

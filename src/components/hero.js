@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import logo from "../images/projectlink-logo-color.png"
 import SignUpForm from "./form";
 import { ContentSection } from "./grid";
 import { Headline, P, H3, Lead } from "./typography";
@@ -8,8 +9,8 @@ import HeroImage from "./heroImage";
 const Hero = () =>
     <div sx={{
       minHeight: "100vh",
-      padding: [1, 5],
-      paddingBottom: [2, 7],
+      paddingTop: "19px",
+      paddingBottom: [2, 6],
       backgroundImage: "radial-gradient(circle, #D7D7D7, #D7D7D7 1px, #FFF 1px, #FFF)",
       backgroundPosition: "0 0",
       backgroundSize: "32px 32px",
@@ -26,6 +27,12 @@ const Hero = () =>
       },
     }} >
       <ContentSection>
+        <img
+          sx={{
+            paddingLeft: 4,
+            maxHeight: 8*3,
+          }}
+          src={logo} alt="projectlink logo" />
 
         <Headline sx={{
           "@keyframes example": {
@@ -52,13 +59,13 @@ const Hero = () =>
         }}>
           <div sx={{
             width: ["100%", "50%"],
-            padding: [4, 3],
+            padding: 4,
           }}>
             <HeroImage />
           </div>
           <div sx={{
             width: ["100%", "50%"],
-            padding: [4, 3],
+            padding: 4,
             zIndex: 1,
             alignSelf: "center",
           }}>

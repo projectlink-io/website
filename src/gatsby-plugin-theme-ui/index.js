@@ -15,6 +15,7 @@ export default {
     highlight: "#0066FF",
     background: {
       beige: "#f5f5f5",
+      black: "#000",
     },
     primary: "#639",
     secondary: "#ff6347",
@@ -39,4 +40,5 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   height: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   radii: [0, 3, 7],
+  breakpoints: ['48em', '56em', '64em',],
 }

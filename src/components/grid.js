@@ -9,3 +9,13 @@ export const ContentSection = ({ children, ...rest }) =>
   }} {...rest}>
     {children}
   </section>
+
+export const FlexRow = ({children, ...rest}) =>
+  <div sx={{
+    display: "flex",
+    flexWrap: "wrap",
+  }}>
+    {children}
+  </div>
+
+

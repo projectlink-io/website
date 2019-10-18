@@ -20,7 +20,6 @@ export const useScrollTriggers = (animationSelectors) => {
       // Loop over all matching DOM elements for that selector
       target.querySelectorAll(selector).forEach(element => {
         const elementBottom = element.getBoundingClientRect().bottom
-        console.log(selector, elementBottom);
         if (elementBottom + 2000 < document.body.clientHeight) {
           if (scrolledToRef.current.some(i => i === selector)) return null;
           scrolledToRef.current = [...scrolledToRef.current, selector];

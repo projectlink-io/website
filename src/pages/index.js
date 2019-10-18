@@ -4,18 +4,23 @@ import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { P, H2, H3 } from "../components/typography"
-import { ContentSection } from "../components/grid"
+import { ContentSection, FlexRow } from "../components/grid"
 import Hero from "../components/hero"
 import AlertBar from "../components/alertBar"
 import NewProjectImage01 from "../components/newProjectImage01"
 import NewProjectImage02 from "../components/newProjectImage02"
 import Projects from "../components/projects"
+import Chats from "../components/chats"
+import Modal from "../components/modal"
+import { useState } from "react"
 
 const IndexPage = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <Layout>
       <SEO title="Home" />
-      <AlertBar />
+      <AlertBar setModalOpen={setModalOpen} />
       <Hero />
 
       <div sx={{
@@ -131,28 +136,77 @@ const IndexPage = () => {
       </div>
       <div>
         <ContentSection>
-          <div sx={{
-            width: ["100%", "50%"],
-            alignSelf: "center",
-            padding: [4, 5],
-            paddingRight: [4, 6],
-            marginTop: "256px",
-          }}>
-            <H3 sx={{
+          <FlexRow>
+            <div sx={{
+              width: ["100%", "50%"],
+              alignSelf: "center",
+              padding: [4, 5],
+              paddingRight: [4, 6],
+              marginTop: "256px",
             }}>
-              Keep track of conversations
-            </H3>
-            <P>
-              A low barrier to communication<br/>means deals happen fast.
-            </P>
-          </div>
+              <H3 sx={{
+                display: ["block", "none"],
+              }}>
+                Easy, fast, secure
+              </H3>
+              <P sx={{
+                display: ["block", "none"],
+              }}>
+                Projectlink uses modern horizontally-scaling real-time
+                database technology, so your data is always safe, up to date, and accessible in
+                the blink of an eye.
+              </P>
+              <H3 sx={{
+                display: ["none", "block"],
+                marginTop: 0,
+              }}>
+                Keep track of conversations
+              </H3>
+              <P sx={{
+                display: ["none", "block"],
+              }}>
+                In-app chat means a low barrier to communication so deals happen fast.
+              </P>
+            </div>
 
-          <div sx={{
-            display: ["none", "block"],
-            width: ["100%", "50%"],
-          }} />
+            <div sx={{
+              display: ["none", "block"],
+              width: ["100%", "50%"],
+              marginTop: "256px",
+              paddingTop: 4,
+            }}>
+              <Chats />
+            </div>
+          </FlexRow>
         </ContentSection>
       </div>
+      <div sx={{
+        backgroundColor: "background.beige",
+        borderTop: "1px solid #e8e8e8",
+      }}>
+        <ContentSection>
+          <FlexRow>
+            <div sx={{
+              width: ["100%", "50%"],
+            }}>
+            </div>
+            <div sx={{
+              width: ["100%", "50%"],
+              alignSelf: "center",
+              padding: [4, 5],
+              paddingRight: [4, 6],
+            }}>
+              <H3 sx={{
+              }}>
+                Get notified with opportunities
+              </H3>
+            </div>
+          </FlexRow>
+        </ContentSection>
+      </div>
+      {
+        modalOpen && <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      }
     </Layout>
   );
 }
