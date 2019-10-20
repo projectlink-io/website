@@ -41,4 +41,7 @@ export default {
   height: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   radii: [0, 3, 7],
   breakpoints: ['48em', '56em', '64em',],
+  shadows: [
+    "0px 0px 31px rgba(0, 0, 0, 0.16), 0px 0px 4px rgba(0, 0, 0, 0.08);"
+  ],
 }

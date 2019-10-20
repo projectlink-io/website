@@ -8,6 +8,8 @@ export const Headline = ({ children, ...rest }) =>
     textAlign: "center",
     fontWeight: "bold",
     lineHeight: "heading",
+    marginTop: 5,
+    marginBottom: 3,
   }} {...rest}>
     {children}
   </h1>

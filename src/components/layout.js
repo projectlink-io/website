@@ -14,7 +14,7 @@ import Header from "./header"
 import globalcss from "../fonts/global.css"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, setModalOpen }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
     <>
       <Global styles={css`@import url("${globalcss}");`} />
       <main>{children}</main>
-      <Footer />
+      <Footer setModalOpen={setModalOpen} />
     </>
   )
 }

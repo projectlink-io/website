@@ -2,12 +2,13 @@
 import { jsx } from 'theme-ui'
 import React from 'react'
 
-const buttonStyles = {
+export const buttonStyles = {
   appearance: "none",
   padding: "8px 16px",
   borderRadius: 3,
   fontWeight: "bold",
   cursor: "pointer",
+  border: "none",
   "&:hover":{
     textDecoration: "underline",
   },

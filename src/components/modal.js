@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui'
 import React from 'react'
 import { H3, P, A } from './typography'
+import SignUpForm from './form';
 
 function Modal({modalOpen, setModalOpen}) {
   return (
@@ -15,9 +16,11 @@ function Modal({modalOpen, setModalOpen}) {
       display: "flex",
       alignItems: "center",
       zIndex: 9,
+      paddingLeft: 4,
+      paddingRight: 4,
     }}>
       <div sx={{
-        maxWidth: "768px",
+        maxWidth: "640px",
         margin: "auto",
         background: "white",
         padding: 4,
@@ -39,14 +42,19 @@ function Modal({modalOpen, setModalOpen}) {
         }}>
           Projectlink
         </P>
-        <H3>
+        <H3 sx={{
+          marginTop: 0,
+          marginBottom: 0,
+        }}>
           Beta signup
         </H3>
         <P sx={{
           marginTop: 0,
         }}>
-          The beta community is a vital part of projectlink.
+          The beta community is a vital part of projectlink. We'll keep you up to date
+          and you'll be among the first to access the platform.
         </P>
+        <SignUpForm />
       </div>
     </div>
   );

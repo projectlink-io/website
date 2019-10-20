@@ -2,15 +2,18 @@
 import { jsx } from "theme-ui"
 import { useState } from "react";
 import addToMailchimp from "gatsby-plugin-mailchimp";
+import {buttonStyles} from "./signupButton"
 
 const Input = ({ children, ...rest }) =>
   <input sx={{
     padding: 2,
+    paddingLeft: 3,
     borderRadius: 5,
     appearance: "none",
     border: "1px solid #d6d6d6",
     width: ["100%", "66.6%"],
     marginBottom: 3,
+    marginTop: 3,
     "&::placeholder": {
       color: "text.lowContrast",
     },
@@ -24,22 +27,10 @@ const Input = ({ children, ...rest }) =>
 
 const Submit = ({ children, ...rest }) =>
   <input sx={{
-    background: "none",
-    outline: "none",
-    padding: 0,
-    border: "none",
-    lineHeight: 1.4,
-    color: "highlight",
-    transition: ".3s all",
-    cursor: "pointer",
-    transformOrigin: "left",
-    transform: "scale(1)",
-    "&:hover": {
-      color: "#00448F",
-      transformOrigin: "left",
-      transform: "scale(1.1)",
-      transition: ".3s all",
-    }
+    ...buttonStyles,
+    background: "black",
+    borderRadius: "5px",
+    color: "text.negative.primary",
   }} type="submit" {...rest}>
     {children}
   </input>

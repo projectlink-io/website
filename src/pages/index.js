@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useState } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,13 +13,13 @@ import NewProjectImage02 from "../components/newProjectImage02"
 import Projects from "../components/projects"
 import Chats from "../components/chats"
 import Modal from "../components/modal"
-import { useState } from "react"
+import Notifications from "../components/notifications"
 
 const IndexPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <Layout>
+    <Layout setModalOpen={setModalOpen}>
       <SEO title="Home" />
       <AlertBar setModalOpen={setModalOpen} />
       <Hero />
@@ -183,12 +184,17 @@ const IndexPage = () => {
       <div sx={{
         backgroundColor: "background.beige",
         borderTop: "1px solid #e8e8e8",
+        display: ["none", "block"],
       }}>
         <ContentSection>
           <FlexRow>
             <div sx={{
               width: ["100%", "50%"],
+              display: "flex",
+              flexDirection: "column",
+              marginTop: 3,
             }}>
+              <Notifications />
             </div>
             <div sx={{
               width: ["100%", "50%"],
@@ -200,6 +206,9 @@ const IndexPage = () => {
               }}>
                 Get notified with opportunities
               </H3>
+              <P>
+                Subscribe to notification channels and keep your finger on the pulse
+              </P>
             </div>
           </FlexRow>
         </ContentSection>

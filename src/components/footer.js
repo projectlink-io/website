@@ -6,7 +6,7 @@ import { ContentSection, FlexRow } from './grid';
 import logo from "../images/projectlink-logo-white.png";
 import SignupButton from './signupButton';
 
-function Footer() {
+function Footer({setModalOpen}) {
   return (
     <div sx={{
       backgroundColor: "background.black",
@@ -22,7 +22,7 @@ function Footer() {
             }}>
               The easiest way<br/>to close deals
             </H3>
-            <SignupButton onClick={() => null}/>
+            <SignupButton onClick={setModalOpen}/>
           </div>
           <div sx={{
             width: "100%",
@@ -32,7 +32,7 @@ function Footer() {
           }}>
             <P sx={{
               color: "text.negative.lowContrast",
-              textAlign: "right",
+              textAlign: ["left", "right"],
             }}>
               questions@projectlink.io | copyright © Projectlink {new Date().getFullYear()}
             </P>

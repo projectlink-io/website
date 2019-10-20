@@ -47,7 +47,7 @@ const Hero = () =>
           },
           animation: "1s ease-out example"
         }}>The easiest way<br/><span sx={{color: "highlight"}}>to close deals</span></Headline>
-        <P sx={{textAlign: "center", fontWeight: "bold"}}>
+        <P sx={{textAlign: "center", fontWeight: "bold", marginTop: 0}}>
           Projectlink is networking software<br/><span sx={{color: "text.lowContrast", fontWeight: "light"}}>for industry leaders.</span>
         </P>
 
@@ -69,7 +69,7 @@ const Hero = () =>
             zIndex: 1,
             alignSelf: "center",
           }}>
-            <Lead>
+            <Lead sx={{marginTop: 0}}>
               Start free. <span sx={{color: "text.lowContrast", fontWeight: "light"}}>No credit card required</span>
             </Lead>
             <Lead>
