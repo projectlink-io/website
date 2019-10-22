@@ -97,7 +97,7 @@ const IndexPage = () => {
             <div sx={{
               width: "100%",
               display: ["none", "block"],
-              paddingTop: 6,
+              paddingTop: 4,
               paddingBottom: 4,
               textAlign: "center",
             }}>

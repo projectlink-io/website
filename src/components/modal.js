@@ -33,7 +33,10 @@ function Modal({modalOpen, setModalOpen}) {
           fontSize: 1,
           right: "16px",
           top: "8px",
-        }} href="#" onClick={() => setModalOpen(false)}>
+        }} href="#" onClick={e => {
+            e.preventDefault();
+            setModalOpen(false)
+          }}>
           close
         </A>
         <P sx={{
