@@ -14,6 +14,8 @@ import Projects from "../components/projects"
 import Chats from "../components/chats"
 import Modal from "../components/modal"
 import Notifications from "../components/notifications"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 
 const IndexPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -216,6 +218,20 @@ const IndexPage = () => {
       {
         modalOpen && <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
       }
+      <ToastContainer
+        className="toast-container"
+        toastClassName="pl-toast"
+        position="top-right"
+        // autoClose={30000}
+        autoClose={false}
+        closeOnClick
+        hideProgressBar={true}
+        newestOnTop={false}
+        rtl={false}
+        pauseOnVisibilityChange
+        draggable
+        pauseOnHover
+        />
     </Layout>
   );
 }

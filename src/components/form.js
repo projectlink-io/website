@@ -2,7 +2,9 @@
 import { jsx } from "theme-ui"
 import { useState } from "react";
 import addToMailchimp from "gatsby-plugin-mailchimp";
-import {buttonStyles} from "./signupButton"
+import { buttonStyles } from "./signupButton"
+import { toast } from "react-toastify";
+import { P } from "./typography";
 
 const Input = ({ children, ...rest }) =>
   <input sx={{
@@ -37,26 +39,47 @@ const Submit = ({ children, ...rest }) =>
 
 const SignUpForm = ({ setNotification }) => {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("Sign up to get updates and be the first to access the beta.");
+  const [messageColor, setMessageColor] = useState("primary");
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     try {
-      await addToMailchimp(email);
-      setNotification(true);
-      setEmail("");
+      const r = await addToMailchimp(email);
+      console.log(r);
+
+      if (r.result && r.result === "error") {
+        setMessageColor("error");
+        return setMessage(r.message || "Couldn't sign you up right now.");
+      }
+
+      if (r.result && r.result === "success") {
+        setEmail("");
+        setMessageColor("success");
+        setMessage("Success! You're signed up.");
+        toast("😀 Thanks for your interest in Projectlink. We'll be in touch with you soon with more information.");
+      }
+
     } catch (error) {
       console.warn(error);
+      setMessageColor("error");
+      setMessage("Couldn't sign up you. Are you connected to the internet?");
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      <P sx={{
+        color: `text.${messageColor}`,
+        marginBottom: 0,
+      }}>{message}</P>
       <Input
         type="text"
         value={email}
         onChange={e => setEmail(e.target.value)}
         placeholder="Enter your email address"
-        required /><br/>
+        required /><br />
       <Submit value="Sign up for the beta →" />
     </form>
   );

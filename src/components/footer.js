@@ -8,7 +8,7 @@ import SignupButton from './signupButton';
 
 function Footer({setModalOpen}) {
   return (
-    <div sx={{
+    <footer sx={{
       backgroundColor: "background.black",
     }}>
       <ContentSection>
@@ -39,7 +39,7 @@ function Footer({setModalOpen}) {
           </div>
         </FlexRow>
       </ContentSection>
-    </div>
+    </footer>
   );
 }
 export default Footer

@@ -6,6 +6,8 @@ export default {
       primary: "#333",
       highContrast: "#000",
       lowContrast: "#777",
+      error: "red",
+      success: "#00D361",
       negative: {
         primary: "#fff",
         highContrast: "#fff",
