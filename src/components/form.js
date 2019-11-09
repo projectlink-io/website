@@ -47,9 +47,12 @@ const SignUpForm = ({ setNotification }) => {
 
     try {
       const r = await addToMailchimp(email);
-      console.log(r);
 
       if (r.result && r.result === "error") {
+        if (r.msg.includes("is already subscribed")) {
+          setMessageColor("success");
+          return setMessage("You're already signed up");
+        }
         setMessageColor("error");
         return setMessage(r.message || "Couldn't sign you up right now.");
       }

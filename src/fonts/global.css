@@ -429,3 +429,13 @@ body {
     padding-right: 16px; 
   }
 }
+
+::selection {
+  background: #40E1B0;
+  color: white;
+}
+
+::-moz-selection {
+  background: #40E1B0;
+  color: white;
+}
