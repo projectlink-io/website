@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+// eslint-disable-next-line
 import React from "react";
 
 import chat01 from "../images/projectlink-chat01.png"
@@ -21,6 +22,7 @@ function Chats() {
       display: "flex",
       flexDirection: "column",
       paddingBottom: 6,
+      paddingRight: 4,
       paddingTop: 5,
     }}>
       <img sx={{...chatStyles}} id="chat-bubbles" src={chat01} alt="projectlink chat bubble" />

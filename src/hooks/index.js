@@ -5,23 +5,24 @@ export const useScrollTriggers = (animationSelectors) => {
   let scrolledToRef = useRef([]);
   const [scrolledTo, setScrolledTo] = useState([]);
 
-  function animChecker(target) {
-    // Loop over our selectors
-    animationSelectors.forEach(selector => {
-      // Loop over all matching DOM elements for that selector
-      target.querySelectorAll(selector).forEach(element => {
-        const elementBottom = element.getBoundingClientRect().bottom
-        if (elementBottom + 3000 < document.body.clientHeight) {
-          if (scrolledToRef.current.some(i => i === selector)) return null;
-          scrolledToRef.current = [...scrolledToRef.current, selector];
-          setScrolledTo(s => [...s, selector])
-
-        }
-      })
-    })
-  }
-
   useEffect(() => {
+
+    function animChecker(target) {
+      // Loop over our selectors
+      animationSelectors.forEach(selector => {
+        // Loop over all matching DOM elements for that selector
+        target.querySelectorAll(selector).forEach(element => {
+          const elementBottom = element.getBoundingClientRect().bottom
+          if (elementBottom + 3000 < document.body.clientHeight) {
+            if (scrolledToRef.current.some(i => i === selector)) return null;
+            scrolledToRef.current = [...scrolledToRef.current, selector];
+            setScrolledTo(s => [...s, selector])
+
+          }
+        })
+      })
+    }
+
     window.addEventListener("scroll", ({target}) => {
       if (!waitingOnAnimRequest.current) {
         window.requestAnimationFrame(() => {
@@ -31,7 +32,7 @@ export const useScrollTriggers = (animationSelectors) => {
         waitingOnAnimRequest.current = true
       }
     })
-  }, [animChecker]);
+  }, [animationSelectors]);
 
   return scrolledTo;
 }
