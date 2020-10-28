@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { A } from "./typography";
 
-export default ({setModalOpen, ...rest}) =>
+export default ({ setModalOpen, ...rest }) =>
   <div sx={{
     height: 4,
     background: "black",
@@ -14,5 +14,5 @@ export default ({setModalOpen, ...rest}) =>
       textAlign: "center",
       fontSize: 1,
       color: "text.negative.primary",
-      }}>Accepting requests for beta access ・ <A sx={{color: "text.negative.highContrast"}} href="#" onClick={setModalOpen}>Learn more →</A></p>
+    }}>Accepting requests for beta access ・ <A sx={{ color: "text.negative.highContrast" }} href="/beta-program">Learn more →</A></p>
   </div>

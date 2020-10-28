@@ -31,9 +31,9 @@ const Hero = () =>
           },
         },
         animation: "1s ease-out example"
-      }}>Projectlink connects<br /><span sx={{ color: "highlight" }}>projects with builders and suppliers</span></Headline>
+      }}>The easiest way<br /><span sx={{ color: "highlight" }}>to close deals</span></Headline>
       <P sx={{ textAlign: "center", fontWeight: "bold", marginTop: 0 }}>
-        A global network<br /><span sx={{ color: "text.lowContrast", fontWeight: "light" }}>for industry leaders.</span>
+        Projectlink connects projects<br /><span sx={{ color: "text.lowContrast", fontWeight: "light" }}>with builders and suppliers.</span>
       </P>
 
       <div sx={{

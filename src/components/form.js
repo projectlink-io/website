@@ -37,9 +37,9 @@ const Submit = ({ children, ...rest }) =>
     {children}
   </input>
 
-const SignUpForm = ({ setNotification }) => {
+const SignUpForm = ({ initialMessage = "Sign up to get updates and be the first to access the beta." }) => {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("Sign up to get updates and be the first to access the beta.");
+  const [message, setMessage] = useState(initialMessage);
   const [messageColor, setMessageColor] = useState("primary");
 
   async function handleSubmit(e) {
