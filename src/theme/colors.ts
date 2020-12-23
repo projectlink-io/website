@@ -28,6 +28,7 @@ interface Colors {
     magenta: string;
     pink: string;
     yellow: string;
+    salmon: string;
   };
 }
 
@@ -80,6 +81,7 @@ const lightMode: Colors = {
     magenta: '#EB367F',
     pink: '#FF0080',
     yellow: '#FFF500',
+    salmon: '#FF6363',
   },
 }
 

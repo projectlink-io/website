@@ -1,17 +1,8 @@
 import * as React from 'react'
-import { Flex, Link as ChakraLink, Box } from '@chakra-ui/react'
+import { Flex, Box } from '@chakra-ui/react'
 import Logo from 'svg/projectlink-logo.svg'
-import { Link as GatsbyLink } from 'gatsby'
-
-const NavLink = ({ href, isExternal = false, ...rest }) => (
-  // @ts-ignore
-  <ChakraLink
-    ml={4}
-    fontSize='sm'
-    {...(isExternal ? { href } : { as: GatsbyLink, to: href })}
-    {...rest}
-  />
-)
+import NavLink from './navLink'
+import { Link } from 'gatsby'
 
 const Header = () => {
   return (
@@ -20,7 +11,9 @@ const Header = () => {
       justify='space-between'
       align='center'
     >
-      <Logo />
+      <Link to='/'>
+        <Logo />
+      </Link>
       <Box>
         <NavLink
           href='/how-it-works'

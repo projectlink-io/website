@@ -2,7 +2,9 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: "Projectlink website",
+    title: `Projectlink`,
+    description: `Projectlink is a global network for industry leaders`,
+    author: `Projectlink`,
   },
   plugins: [
     "gatsby-plugin-sharp",
@@ -54,6 +56,12 @@ module.exports = {
         "src": path.join(__dirname, 'src'),
         "pages": path.join(__dirname, 'src/pages')
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint: `https://gmail.us3.list-manage.com/subscribe/post?u=917122ec5826ff0e3c02b8bb8&amp;id=3aec3a80e9`
+      },
+    },
   ],
 }

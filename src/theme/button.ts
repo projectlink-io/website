@@ -1,5 +1,6 @@
 export default {
   baseStyle: {
+    borderRadius: '5px',
   },
   defaultProps: {
     size: 'sm',
@@ -22,6 +23,11 @@ export default {
         bg: 'rgba(255,255,255,0.15)',
         borderColor: 'primary.background',
       },
+    },
+    link: {
+      fontSize: 'md',
+      fontWeight: 500,
+      color: 'primary.foreground',
     },
   },
 }

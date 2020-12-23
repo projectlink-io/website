@@ -1,20 +1,18 @@
 import * as React from 'react'
-import Header from 'components/header'
 import Hero from 'components/hero'
 import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
 import TabbedTeaser from 'components/tabbedTeaser'
 import Searching from 'svg/projectlink-searching.svg'
 import ChartDude from 'svg/projectlink-invest.svg'
+import Layout from 'components/layout'
+import { Link } from 'gatsby'
 
 const IndexPage = () => {
   return (
-    <Box
-      bgImage='radial-gradient(circle,#D7D7D7,#D7D7D7 1px,#FFF 1px,#FFF)'
-      bgSize='30px 30px'
-      bgPos='0 0'
-    >
-      <Header />
-      <Hero />
+    <Layout
+      renderHero={() => (
+        <Hero />
+      )} >
       <TabbedTeaser />
       <Box
         bg='primary.accent8'
@@ -44,9 +42,11 @@ const IndexPage = () => {
             >
               Projectlink is designed to help you find, connect, and work with companies in your industry.
             </Text>
-            <Button variant='inverted'>
-              How does it work?
+            <Link to='how-it-works'>
+              <Button variant='inverted'>
+                How does it work?
             </Button>
+            </Link>
           </Box>
         </Flex>
       </Box>
@@ -83,7 +83,7 @@ const IndexPage = () => {
           />
         </Flex>
       </Box>
-    </Box>
+    </Layout>
   )
 }
 
