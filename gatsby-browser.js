@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+// https://chakra-ui.com/guides/integrations/with-gatsby#gatsby-plugin
+import * as React from "react"
+import { ChakraProvider, CSSReset } from "@chakra-ui/react"
+import theme from "./src/theme"
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => {
+  return (
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      {element}
+    </ChakraProvider>
+  )
+}
