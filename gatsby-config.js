@@ -5,6 +5,7 @@ module.exports = {
     title: `Projectlink`,
     description: `Projectlink is a global network for industry leaders`,
     author: `Projectlink`,
+    siteUrl: 'https://www.projectlink.io',
   },
   plugins: [
     "gatsby-plugin-sharp",
