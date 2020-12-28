@@ -8,9 +8,35 @@ import addToMailchimp from 'gatsby-plugin-mailchimp'
 const re = new RegExp(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i)
 
 const PitchForm = () => {
-  const toast = useToast()
+  return (
+    <Stack spacing={4}>
+      <Text textStyle='h3'>
+        Start free.&nbsp;
+      <chakra.span color='primary.accent3'>
+          Only pay for heavy usage
+      </chakra.span>
+      </Text>
+      <Text textStyle='h3'>
+        Secure.&nbsp;
+      <chakra.span color='primary.accent3'>
+          Industry leading infrastructure
+      </chakra.span>
+      </Text>
+      <Text textStyle='h3'>
+        Private.&nbsp;
+      <chakra.span color='primary.accent3'>
+          You own and contorl your data
+      </chakra.span>
+      </Text>
+      <SubmitEmail />
+    </Stack>
+  )
+}
+
+const SubmitEmail = () => {
   const [isLoading, setIsLoading] = React.useState(false)
   const [error, setError] = React.useState('')
+  const toast = useToast()
 
   const onSubmit = async e => {
     e.preventDefault()
@@ -53,48 +79,28 @@ const PitchForm = () => {
   }
 
   return (
-    <Stack spacing={4}>
-      <Text textStyle='h3'>
-        Start free.&nbsp;
-      <chakra.span color='primary.accent3'>
-          Only pay for heavy usage
-      </chakra.span>
-      </Text>
-      <Text textStyle='h3'>
-        Secure.&nbsp;
-      <chakra.span color='primary.accent3'>
-          Industry leading infrastructure
-      </chakra.span>
-      </Text>
-      <Text textStyle='h3'>
-        Private.&nbsp;
-      <chakra.span color='primary.accent3'>
-          You own and contorl your data
-      </chakra.span>
-      </Text>
-      <chakra.form onSubmit={onSubmit}>
-        <Input
-          id='email'
-          placeholder='Email'
-          mt={6}
-        />
-        {error && (
-          <Text
-            color='error.default'
-          >
-            {error}
-          </Text>
-        )}
-        <Button
-          variant='link'
-          isLoading={isLoading}
-          type='submit'
-          mt={4}
+    <chakra.form onSubmit={onSubmit}>
+      <Input
+        id='email'
+        placeholder='Email'
+        mt={6}
+      />
+      {error && (
+        <Text
+          color='error.default'
         >
-          Request beta access →
-        </Button>
-      </chakra.form>
-    </Stack>
+          {error}
+        </Text>
+      )}
+      <Button
+        variant='link'
+        isLoading={isLoading}
+        type='submit'
+        mt={4}
+      >
+        Request beta access →
+      </Button>
+    </chakra.form>
   )
 }
 
@@ -140,5 +146,9 @@ const Footer = () => (
     </Flex>
   </Box>
 )
+
+export {
+  SubmitEmail,
+}
 
 export default Footer

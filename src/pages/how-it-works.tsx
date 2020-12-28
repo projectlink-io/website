@@ -19,7 +19,7 @@ const tabs = [{
   HeroIllustration: BuilderMan,
 }]
 
-const Illustration = ({ tabIndex }) => {
+export const Illustration = ({ tabIndex }) => {
   return (
     <Box
       as={tabs[tabIndex].HeroIllustration}
