@@ -43,7 +43,7 @@ const ProjectOwners = () => {
       <TextBlock
         heading="Decide who it's for"
         body='Make your project private, and only invite the suppliers and builders you trust. Or cast a line and post it publically.'
-        my={[4, 4, 12]}
+        my={[4, 4, '80px']}
       />
       <Flex
         py={[0, 0, 12]}

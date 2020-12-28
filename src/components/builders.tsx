@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading } from '@chakra-ui/react'
 import * as React from 'react'
 import Notifications from 'svg/projectlink-notifications.svg'
 import Arrow from 'svg/down-arrow.svg'
@@ -7,14 +7,6 @@ import AggregateArrow from 'svg/aggregate-arrow.svg'
 import WorkTogether from 'svg/projectlink-work-together.svg'
 import Illustration from './illustration'
 import TextBlock from './textBlock'
-
-const SectionTitle = props => (
-  <Heading as='h2' pb={4} textStyle='h2' {...props} />
-)
-
-const SectionBody = props => (
-  <Text pb={4} textStyle='h3' color='primary.accent3' {...props} />
-)
 
 const Row = props => (
   <Flex

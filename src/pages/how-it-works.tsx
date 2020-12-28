@@ -1,6 +1,7 @@
 import * as React from 'react'
-import Layout from 'components/layout'
 import { Box, chakra, Flex, Heading, Tab, Tabs, TabList, TabPanels, Icon, TabPanel } from '@chakra-ui/react'
+import * as qS from 'query-string'
+import Layout from 'components/layout'
 import BusinessWoman from 'svg/projectlink-business-woman.svg'
 import BuilderMan from 'svg/projectlink-engineer.svg'
 import Eyebrow from 'components/eyebrow'
@@ -14,10 +15,8 @@ const Emphasis = ({ children }) => (
 
 const tabs = [{
   HeroIllustration: BusinessWoman,
-  // Page: ProjectOwners,
 }, {
   HeroIllustration: BuilderMan,
-  // Page: Builders,
 }]
 
 const Illustration = ({ tabIndex }) => {
@@ -34,9 +33,37 @@ const Illustration = ({ tabIndex }) => {
   )
 }
 
-const HowItWorks = () => {
+function insertUrlParams(params: { [key: string]: string }) {
+  if (!window.location) return null
+  if (!history.pushState) return null
+
+  const searchParams = new URLSearchParams(window.location.search)
+  Object.keys(params).forEach(key => {
+    searchParams.set(key, params[key])
+  })
+
+  const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString();
+  window.history.pushState({ path: newUrl }, '', newUrl)
+}
+
+const HowItWorks = ({ location }) => {
+  const firstRender = React.useRef(true)
   const [activeTab, setActiveTab] = React.useState(0)
-  const onTabChange = activeIndex => setActiveTab(activeIndex)
+
+  const onTabChange = activeIndex => {
+    setActiveTab(activeIndex)
+    insertUrlParams({ tab: activeIndex === 0 ? 'owners' : 'builders' })
+  }
+
+  const query = qS.parse(location.search)
+  const defaultIndex = query.tab == 'builders' ? 1 : 0
+
+  React.useEffect(() => {
+    if (firstRender.current) {
+      setActiveTab(defaultIndex)
+      firstRender.current = false
+    }
+  }, [query])
 
   return (
     <Layout
@@ -59,7 +86,7 @@ const HowItWorks = () => {
         </Flex>
       )}
     >
-      <Tabs variant='enclosed' onChange={onTabChange}>
+      <Tabs variant='enclosed' onChange={onTabChange} defaultIndex={defaultIndex}>
         <TabList>
           <Flex
             width='container.lg'
