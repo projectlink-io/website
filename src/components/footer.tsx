@@ -21,16 +21,28 @@ const PitchForm = () => {
 
     try {
       setError('')
-      await addToMailchimp(email)
+      let msg = "Thank you for your interest! We'll be in touch."
+
+      const r = await addToMailchimp(email)
+
+      if (r.result === 'error') {
+        if (r.msg.match(/is already subscribed to list/i)) {
+          msg = 'You are on the list! Thanks!'
+        } else {
+          throw new Error(r.msg)
+        }
+      }
+
       toast({
-        description: "Thank you for your interest! We'll be in touch.",
+        description: msg,
         status: "success",
         duration: 9000,
         isClosable: true,
       })
     } catch (e) {
+      console.warn(e)
       toast({
-        description: e.message,
+        description: 'Sorry, something went wrong. Please check your connection try again',
         status: "error",
         duration: 9000,
         isClosable: true,
