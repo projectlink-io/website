@@ -64,7 +64,7 @@ const BetaProgram = () => {
             textStyle='h3'
             color='primary.accent3'
             w={['100%', '100%', '50%']}
-            pl={[0, 0, 8]}
+            pl={[0, 0, 10]}
           >
             Our users play an important role in developing Projectlink. We’ll launch as a closed beta, offering the service to a small group of organizations. This allows us to see how you use the application, listen closely to your feedback, and adapt the software to your needs. The beta program offers early adoption to the platform for free, there’s no commitment or expectation from you.
         </Text>
