@@ -42,8 +42,8 @@ function insertUrlParams(params: { [key: string]: string }) {
     searchParams.set(key, params[key])
   })
 
-  const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString();
-  window.history.pushState({ path: newUrl }, '', newUrl)
+  // const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString();
+  window.history.pushState(null, '', `?${searchParams.toString()}`)
 }
 
 const HowItWorks = ({ location }) => {
