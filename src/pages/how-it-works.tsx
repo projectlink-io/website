@@ -5,6 +5,8 @@ import BusinessWoman from 'svg/projectlink-business-woman.svg'
 import BuilderMan from 'svg/projectlink-engineer.svg'
 import Eyebrow from 'components/eyebrow'
 import { FiBriefcase, FiTool } from 'react-icons/fi'
+import ProjectOwners from 'components/projectOwners'
+import Builders from 'components/builders'
 
 const Emphasis = ({ children }) => (
   <chakra.span color='primary.foreground'>{children}</chakra.span>
@@ -49,7 +51,7 @@ const HowItWorks = () => {
             <Eyebrow>
               How it works
             </Eyebrow>
-            <Heading as='h1' textStyle='h2' color='primary.accent3'>
+            <Heading as='h2' textStyle='h2' color='primary.accent3'>
               Projectlink helps <Emphasis>find</Emphasis>, <Emphasis>connect</Emphasis>,
               and <Emphasis>work</Emphasis> with companies in your industry.
             </Heading>
@@ -76,10 +78,10 @@ const HowItWorks = () => {
         </TabList>
         <TabPanels bg='primary.accent1'>
           <TabPanel layerStyle='tabPanel'>
-            1
+            <ProjectOwners />
           </TabPanel>
           <TabPanel layerStyle='tabPanel'>
-            2
+            <Builders />
           </TabPanel>
         </TabPanels>
       </Tabs>

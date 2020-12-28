@@ -87,22 +87,22 @@ const PitchForm = () => {
 }
 
 const Footer = () => (
-  <Box
-    bg='primary.accent1'
-  >
-    <Flex
+  <Box bg='primary.accent1'>
+    <Box
       layerStyle='appContainer'
-      justify='space-between'
+      justifyContent='space-between'
+      d={['block', 'block', 'flex']}
       py='80px'
     >
       <Box
         as={Goals}
         w='100%'
-        maxW='300px'
+        maxW='320px'
         mx='auto'
+        mb={[6, 6, 0]}
       />
       <PitchForm />
-    </Flex>
+    </Box>
     <Flex
       layerStyle='appContainer'
       justify='space-between'

@@ -3,6 +3,7 @@ import { Box, Button, Flex, Heading, Icon, Tab, TabList, TabPanel, TabPanels, Ta
 import { FiBriefcase, FiTool } from 'react-icons/fi'
 import NewPostIllustration from 'svg/projectlink-new-post.svg'
 import FeedIllustration from 'svg/projectlink-feed.svg'
+import { Link } from 'gatsby'
 
 const Pitch = ({ title, body, Svg }) => (
   <>
@@ -30,9 +31,11 @@ const Pitch = ({ title, body, Svg }) => (
       >
         {body}
       </Text>
-      <Button variant='outline'>
-        Request beta access
-      </Button>
+      <Link to='/how-it-works'>
+        <Button variant='outline'>
+          How does it work?
+        </Button>
+      </Link>
     </Box>
     <Box
       as={Svg}

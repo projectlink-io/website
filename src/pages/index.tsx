@@ -26,6 +26,7 @@ const IndexPage = () => {
             w='100%'
             maxW='200px'
             mx='auto'
+            d={['none', 'none', 'block']}
           />
           <Box layerStyle='textColumn'>
             <Heading
@@ -42,7 +43,7 @@ const IndexPage = () => {
             >
               Projectlink is designed to help you find, connect, and work with companies in your industry.
             </Text>
-            <Link to='how-it-works'>
+            <Link to='/how-it-works'>
               <Button variant='inverted'>
                 How does it work?
             </Button>
@@ -71,15 +72,18 @@ const IndexPage = () => {
             >
               Projectlink is designed to save you time and money
             </Text>
-            <Button variant='outline'>
-              How does it work?
-            </Button>
+            <Link to='/how-it-works'>
+              <Button variant='outline'>
+                How does it work?
+              </Button>
+            </Link>
           </Box>
           <Box
             as={ChartDude}
             w='100%'
             maxW='220px'
             mx='auto'
+            d={['none', 'none', 'block']}
           />
         </Flex>
       </Box>
