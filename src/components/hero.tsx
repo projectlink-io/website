@@ -19,12 +19,9 @@ const Hero = () => {
         align='flex-end'
         py='96px'
       >
-        {/* <SlideFade in={isRendered} reverse> */}
         <Box
-          as={SlideFade}
-          in={isRendered}
           maxW='569px'
-          offsetY='-60px'
+          animation='2s ease-out slideIn'
         >
           <Heading
             as='h1'
@@ -43,7 +40,6 @@ const Hero = () => {
             For project leaders, suppliers, and builders of heavy industry machinery
           </Heading>
         </Box>
-        {/* </SlideFade> */}
         <Box
           as={Dudes}
           flexGrow={1}
