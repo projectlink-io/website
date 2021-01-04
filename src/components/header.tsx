@@ -9,12 +9,17 @@ const Header = () => {
     <Flex
       layerStyle='appContainer'
       justify='space-between'
-      align='center'
+      align={['flex-start', 'flex-start', 'center']}
+      flexDir={['column', 'column', 'row']}
     >
       <Link to='/'>
-        <Logo />
+        <Box as={Logo} mb={3} />
+        {/* <Logo /> */}
       </Link>
-      <Box>
+      <Flex
+        align={['flex-start', 'flex-start', 'center']}
+        flexDir={['column', 'column', 'row']}
+      >
         <NavLink
           href='/how-it-works'
         >
@@ -25,7 +30,7 @@ const Header = () => {
         >
           Beta program
         </NavLink>
-      </Box>
+      </Flex>
     </Flex>
   )
 }

@@ -54,12 +54,27 @@ const TabbedTeaser = () => (
         marginX='auto'
       >
         <Tab>
-          <Icon color='primary.accent3' as={() => <FiBriefcase />} />
-          &nbsp;Project owners
+          <Icon
+            color='primary.accent3'
+            as={() => <FiBriefcase />}
+            d='none'
+          />
+          <Text
+            fontSize={['xs', 'xs', 'sm']}
+          >
+            &nbsp;Project owners
+          </Text>
         </Tab>
         <Tab>
-          <Icon color='primary.accent3' as={() => <FiTool />} />
-          &nbsp;Builders and suppliers
+          <Icon
+            color='primary.accent3'
+            as={() => <FiTool />}
+          />
+          <Text
+            fontSize={['xs', 'xs', 'sm']}
+          >
+            &nbsp;Builders and suppliers
+          </Text>
         </Tab>
       </Flex>
     </TabList>

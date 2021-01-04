@@ -126,7 +126,7 @@ const Footer = () => (
       justify='space-between'
       pt='64px'
     >
-      <Box>
+      <Box d={['none', 'none', 'block']}>
         <NavLink
           color='primary.accent3'
           href='/how-it-works'
