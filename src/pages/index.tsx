@@ -43,9 +43,9 @@ const IndexPage = () => {
             >
               Projectlink is designed to help you find, connect, and work with companies in your industry.
             </Text>
-            <Link to='/how-it-works'>
+            <Link to='/beta-program'>
               <Button variant='inverted'>
-                How does it work?
+                Join the beta program
             </Button>
             </Link>
           </Box>
