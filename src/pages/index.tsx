@@ -6,6 +6,7 @@ import Searching from 'svg/projectlink-searching.svg'
 import ChartDude from 'svg/projectlink-invest.svg'
 import Layout from 'components/layout'
 import { Link } from 'gatsby'
+import SEO from 'components/seo'
 
 const IndexPage = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = () => {
       renderHero={() => (
         <Hero />
       )} >
+      <SEO />
       <TabbedTeaser />
       <Box
         bg='primary.accent8'

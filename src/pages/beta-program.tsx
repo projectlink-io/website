@@ -5,6 +5,7 @@ import { Box, Flex, Heading, Input, Text } from '@chakra-ui/react'
 import Eyebrow from 'components/eyebrow'
 import Construction from 'svg/projectlink-construction.svg'
 import { SubmitEmail } from 'components/footer'
+import SEO from 'components/seo'
 
 const BetaProgram = () => {
   return (
@@ -34,6 +35,7 @@ const BetaProgram = () => {
         </Flex>
       )}
     >
+      <SEO title='Projectlink beta' description='Join the Projectlink beta' />
       <Box
         bg='primary.accent1'
         borderTopWidth='1px'

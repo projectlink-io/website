@@ -8,6 +8,7 @@ import Eyebrow from 'components/eyebrow'
 import { FiBriefcase, FiTool } from 'react-icons/fi'
 import ProjectOwners from 'components/projectOwners'
 import Builders from 'components/builders'
+import SEO from 'components/seo'
 
 const Emphasis = ({ children }) => (
   <chakra.span color='primary.foreground'>{children}</chakra.span>
@@ -86,6 +87,7 @@ const HowItWorks = ({ location }) => {
         </Flex>
       )}
     >
+      <SEO title='How it works' description='How does Projectlink work?' />
       <Tabs variant='enclosed' onChange={onTabChange} defaultIndex={defaultIndex}>
         <TabList>
           <Flex

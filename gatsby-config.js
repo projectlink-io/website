@@ -3,9 +3,11 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Projectlink`,
+    titleTemplate: `%s | the network for industry leaders`,
     description: `Projectlink is a global network for industry leaders`,
     author: `Projectlink`,
-    siteUrl: 'https://www.projectlink.io',
+    url: "https://www.projectlink.io",
+    image: "/projectlink.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     "gatsby-plugin-sharp",
