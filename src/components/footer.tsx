@@ -25,7 +25,7 @@ const PitchForm = () => {
       <Text textStyle='h3'>
         Private.&nbsp;
       <chakra.span color='primary.accent3'>
-          You own and contorl your data
+          You own and control your data
       </chakra.span>
       </Text>
       <SubmitEmail />
