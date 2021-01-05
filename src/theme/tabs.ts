@@ -5,7 +5,8 @@ export default {
       tab: {
         color: 'primary.accent4',
         mb: '-1px',
-        fontWeight: 500,
+        fontWeight: 400,
+        fontSize: ['xs', 'xs', 'sm'],
         _hover: {
           color: 'primary.foreground',
         },

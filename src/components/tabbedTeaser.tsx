@@ -60,7 +60,6 @@ const TabbedTeaser = () => (
             d='none'
           />
           <Text
-            fontSize={['xs', 'xs', 'sm']}
           >
             &nbsp;Project owners
           </Text>
@@ -71,7 +70,6 @@ const TabbedTeaser = () => (
             as={() => <FiTool />}
           />
           <Text
-            fontSize={['xs', 'xs', 'sm']}
           >
             &nbsp;Builders and suppliers
           </Text>
