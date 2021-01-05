@@ -1,33 +1,62 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `Projectlink`,
     description: `Projectlink is a global network for industry leaders`,
-    author: `projectlink`,
+    author: `Projectlink`,
+    siteUrl: 'https://www.projectlink.io',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-theme-ui`,
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-image",
+    "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
+        isResettingsCSS: true,
+        isUsingColorMode: false,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-google-fonts-v2",
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#000`,
-        theme_color: `#000`,
-        display: `minimal-ui`,
-        icon: `src/images/projectlink-favicon.png`, // This path is relative to the root of the site.
+        fonts: [
+          {
+            family: 'Inter',
+            variable: true,
+            weights: ['400..700']
+          },
+        ],
       },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        "components": path.join(__dirname, "src/components"),
+        "svg": path.join(__dirname, "src/svg"),
+        "layouts": path.join(__dirname, "src/layouts"),
+        "src": path.join(__dirname, 'src'),
+        "pages": path.join(__dirname, 'src/pages')
+      }
     },
     {
       resolve: `gatsby-plugin-mailchimp`,
@@ -35,8 +64,5 @@ module.exports = {
         endpoint: `https://gmail.us3.list-manage.com/subscribe/post?u=917122ec5826ff0e3c02b8bb8&amp;id=3aec3a80e9`
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
