@@ -5,6 +5,14 @@ import NavLink from './navLink'
 import { Link } from 'gatsby'
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+
+  React.useEffect(() => {
+    const cookies = document.cookie.split(';')
+    const isLoggedIn = cookies.some(c => c.substr(0, 7) === 'pl-user')
+    setIsLoggedIn(isLoggedIn)
+  }, [])
+
   return (
     <Flex
       layerStyle='appContainer'
@@ -30,6 +38,11 @@ const Header = () => {
         >
           Beta program
         </NavLink>
+        {isLoggedIn && (
+          <NavLink href='https://projectlink.app/account' target='_blank' isExternal>
+            Account
+          </NavLink>
+        )}
       </Flex>
     </Flex>
   )
