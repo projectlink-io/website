@@ -11,15 +11,15 @@ const SEO = (props: { title?: string, description?: string, article?: boolean, i
     defaultTitle,
     titleTemplate,
     defaultDescription,
-    siteUrl,
+    url,
     defaultImage,
   } = site.siteMetadata
 
   const seo = {
     title: props.title || defaultTitle,
     description: props.description || defaultDescription,
-    image: `${siteUrl}${props.image || defaultImage}`,
-    url: `${siteUrl}${pathname}`,
+    image: `${url}${props.image || defaultImage}`,
+    url: `${url}${pathname}`,
   }
 
   return (
@@ -54,7 +54,7 @@ const query = graphql`
         defaultTitle: title
         titleTemplate
         defaultDescription: description
-        siteUrl: url
+        url: url
         defaultImage: image
       }
     }

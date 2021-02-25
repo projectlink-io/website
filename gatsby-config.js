@@ -6,6 +6,7 @@ module.exports = {
     titleTemplate: `%s | the network for industry leaders`,
     description: `Projectlink is a global network for industry leaders`,
     author: `Projectlink`,
+    url: "https://www.projectlink.io",
     siteUrl: "https://www.projectlink.io",
     image: "/projectlink.png", // Path to your image you placed in the 'static' folder
   },
