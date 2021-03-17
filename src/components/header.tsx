@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Flex, Box } from '@chakra-ui/react'
+import { Flex, Box, Button } from '@chakra-ui/react'
 import Logo from 'svg/projectlink-logo.svg'
 import NavLink from './navLink'
 import { Link } from 'gatsby'
@@ -38,10 +38,31 @@ const Header = () => {
         >
           Beta program
         </NavLink>
-        {isLoggedIn && (
-          <NavLink href='https://projectlink.app/account' target='_blank' isExternal>
+        {isLoggedIn ? (
+          <NavLink
+            href='https://projectlink.app/account'
+            target='_blank'
+            isExternal
+          >
             Account
           </NavLink>
+        ) : (
+          <Button
+            as='a'
+            href='https://projectlink.app/signup'
+            target='_blank'
+            bg='#0070F3'
+            ml={2}
+            borderColor='#0070F3'
+            borderWidth='1px'
+            color='white'
+            _hover={{
+              bg: 'white',
+              color: '#0070F3',
+            }}
+          >
+            Sign up
+          </Button>
         )}
       </Flex>
     </Flex>

@@ -98,7 +98,7 @@ const SubmitEmail = () => {
         type='submit'
         mt={4}
       >
-        Request beta access →
+        Get updates →
       </Button>
     </chakra.form>
   )

@@ -1,10 +1,10 @@
 import * as React from 'react'
 import Layout from 'components/layout'
 import Illustration from 'components/illustration'
-import { Box, Flex, Heading, Input, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react'
 import Eyebrow from 'components/eyebrow'
 import Construction from 'svg/projectlink-construction.svg'
-import { SubmitEmail } from 'components/footer'
+// import { SubmitEmail } from 'components/footer'
 import SEO from 'components/seo'
 
 const BetaProgram = () => {
@@ -60,7 +60,13 @@ const BetaProgram = () => {
             <Heading as='h3' textStyle='h3'>
               Be the first to try the platform
             </Heading>
-            <SubmitEmail />
+            <Link
+              fontFamily='body'
+              href='https://projectlink.app/signup'
+              target='_blank'
+            >
+              Sign up for the beta →
+            </Link>
           </Box>
           <Text
             textStyle='h3'
